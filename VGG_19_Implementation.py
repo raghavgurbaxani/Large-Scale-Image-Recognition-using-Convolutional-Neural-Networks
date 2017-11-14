@@ -12,10 +12,6 @@ def bias_variable(shape):
     initial=tf.constant(0.1,shape=shape)
     return tf.Variable(initial)
 
-#Function to perform convolution
-def conv2d(x,W,stride):
-    return tf.nn.conv2d(x,W,strides=[1, stride, stride, 1], padding='SAME')
-
 #Pooling Function
 def max_pool(x,stride,k):
     return tf.nn.max_pool(x,strides=[1, stride, stride, 1], ksize=[1, k, k, 1] , padding='SAME')
